@@ -7,6 +7,7 @@ const StyledCard = styled(AntCard)`
   padding: ${(props) => props.padding || "auto"};
   size: ${(props) => (props.size === 0 ? 0 : 24)} px;
   margin: ${(props) => props.margin || "auto"};
+  maxwidth: ${(props) => props.maxWidth || "auto"};
 `;
 
 const Card = ({
@@ -19,6 +20,8 @@ const Card = ({
   style,
   extra,
   headStyle,
+  maxWidth,
+  margin,
 }) => {
   return (
     <StyledCard
@@ -30,6 +33,8 @@ const Card = ({
       style={style}
       extra={extra}
       headStyle={headStyle}
+      maxWidth={maxWidth}
+      margin={margin}
     >
       {children}
     </StyledCard>
