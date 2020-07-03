@@ -1,8 +1,7 @@
 import React from "react";
 import { Typography, Row, Col } from "antd";
 import Card from "../Components/Card";
-
-import BlogDetails from "./BlogDetails";
+import BlogDetails from "../Components/BlogDetails";
 
 function Blog() {
   return (
