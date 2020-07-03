@@ -1,9 +1,7 @@
 import React from "react";
 import { Typography, Row, Col, Tag, Space } from "antd";
 import Avatar from "./Avatar";
-
 import { MoreOutlined } from "@ant-design/icons";
-import "antd/dist/antd.css";
 
 function BlogDetails({ title, personName, tagcolor, tag }) {
   return (

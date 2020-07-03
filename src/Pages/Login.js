@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Form, Input, Button, Card } from "antd";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
-import "antd/dist/antd.css";
 
 const LOGIN_USER = gql`
   mutation($input: UsersPermissionsLoginInput!) {

@@ -15,7 +15,6 @@ import {
   LaptopOutlined,
 } from "@ant-design/icons";
 import Card from "../Components/Card";
-import "antd/dist/antd.css";
 
 function EditorPage() {
   const [active, setactive] = useState("");

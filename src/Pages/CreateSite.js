@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Form, Input, Button, Select, Card } from "antd";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
-import "antd/dist/antd.css";
 
 const CREATE_SITE = gql`
   mutation createSite($input: createSiteInput!) {

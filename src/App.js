@@ -6,10 +6,12 @@ import EditorPage from "./Pages/EditorPage";
 import Content from "./Components/Content";
 import CreateSite from "./Pages/CreateSite";
 import UpdateSite from "./Pages/UpdateSite";
-import DeleteSite from "./Components/DeleteSite";
+import DeleteSite from "./Pages/DeleteSite";
 import RegisterUser from "./Pages/RegisterUser";
 import Login from "./Pages/Login";
 import CreatePage from "./Pages/CreatePage";
+import "antd/dist/antd.css";
+
 function App() {
   return (
     <div>
