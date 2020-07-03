@@ -1,5 +1,5 @@
 import React from "react";
-import { Card as AntCard } from "antd";
+import { Card as AntCard, Typography, Space } from "antd";
 import styled from "styled-components";
 
 const StyledCard = styled(AntCard)`
@@ -36,7 +36,12 @@ const Card = ({
       maxWidth={maxWidth}
       margin={margin}
     >
-      {children}
+      <Space direction="vertical" style={{ lineHeight: "12px" }}>
+        <Typography.Text>Summary</Typography.Text>
+        <Typography.Text>Analytics</Typography.Text>
+        <Typography.Text>Other</Typography.Text>
+        <Typography.Text>info</Typography.Text>
+      </Space>
     </StyledCard>
   );
 };

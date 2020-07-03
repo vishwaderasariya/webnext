@@ -1,16 +1,16 @@
 import React from "react";
 import { Route, BrowserRouter, Switch } from "react-router-dom";
-import Sites from "./Pages/Sites";
-import SitePage from "./Pages/SitePage";
-import EditorPage from "./Pages/EditorPage";
+import Sites from "./routes/Sites";
+import site from "./routes/site";
+import EditorPage from "./routes/EditorPage";
 import Content from "./Components/Content";
-import CreateSite from "./Pages/CreateSite";
-import UpdateSite from "./Pages/UpdateSite";
-import DeleteSite from "./Pages/DeleteSite";
-import RegisterUser from "./Pages/RegisterUser";
-import Login from "./Pages/Login";
-import CreatePage from "./Pages/CreatePage";
-import "antd/dist/antd.css";
+import CreateSite from "./Components/CreateSite";
+import UpdateSite from "./Components/UpdateSite";
+import DeleteSite from "./Components/DeleteSite";
+import RegisterUser from "./Components/RegisterUser";
+import Login from "./Components/Login";
+import CreatePage from "./Components/CreatePage";
+import site_content from "./routes/site_content";
 
 function App() {
   return (
@@ -24,7 +24,8 @@ function App() {
           <Route path="/login" component={Login} exact />
           <Route path="/createpage" component={CreatePage} exact />
           <Route path="/home" component={Sites} exact />
-          <Route path="/sitepage" component={SitePage} exact></Route>
+          <Route path="/site" component={site} exact></Route>
+          <Route path="/sitecontent" component={site_content} exact />
           <Route path="/content" component={Content}>
             <Switch>
               <Route path="/blogs" />

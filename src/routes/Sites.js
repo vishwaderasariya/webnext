@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Space, Button, Layout, Typography, Row, Col, Badge } from "antd";
+import { Space, Button, Layout, Row, Col, Badge } from "antd";
 import Avatar from "../Components/Avatar";
 import Card from "../Components/Card";
+import Header from "../Components/Header";
 import {
   QuestionCircleOutlined,
   PlusOutlined,
@@ -14,7 +15,7 @@ function Sites() {
   return (
     <div>
       <Layout>
-        <Layout.Header
+        {/* <Layout.Header
           style={{
             backgroundColor: "#fff",
             padding: "0 16px",
@@ -22,15 +23,11 @@ function Sites() {
         >
           <Row justify="space-between">
             <Col>
-              <div
-                style={{
-                  display: "inline-block",
-                  backgroundColor: "#C4C4C4",
-                  width: "84px",
-                  marginTop: 16,
-                  height: 32,
-                }}
-              ></div>
+              <img
+                src="https://picsum.photos/200"
+                alt="Logo"
+                style={{ width: 82, height: 30, marginBottom: "4px" }}
+              ></img>
             </Col>
             <Col>
               <Row gutter={8} align="middle">
@@ -59,15 +56,16 @@ function Sites() {
               </Row>
             </Col>
           </Row>
-        </Layout.Header>
+        </Layout.Header> */}
 
+        <Header />
         <Layout.Content
           style={{
             padding: 16,
             minHeight: "100vh",
           }}
         >
-          <Row gutter={[5, 5]} type="flex">
+          <Row gutter={[5, 5]}>
             <Col xs={24} sm={12} md={8} lg={6} xl={5}>
               <Button
                 icon={<PlusOutlined />}
@@ -82,35 +80,21 @@ function Sites() {
                 style={{
                   border: "1px solid #DCDCDC",
                 }}
-              >
-                <Space direction="vertical" style={{ lineHeight: "12px" }}>
-                  <Typography.Text>Summary</Typography.Text>
-                  <Typography.Text>Analytics</Typography.Text>
-                  <Typography.Text>Other</Typography.Text>
-                  <Typography.Text>info</Typography.Text>
-                </Space>
-              </Card>
+              ></Card>
             </Col>
             <Col xs={24} sm={12} md={8} lg={6} xl={5}>
               <Card
                 title="Logicwind.com"
                 headStyle={{ fontWeight: "bold" }}
                 extra={
-                  <NavLink to="/sitepage">
+                  <NavLink to="/site">
                     <Button type="link">Settings</Button>
                   </NavLink>
                 }
                 style={{
                   border: "1px solid #DCDCDC",
                 }}
-              >
-                <Space direction="vertical" style={{ lineHeight: "12px" }}>
-                  <Typography.Text>Summary</Typography.Text>
-                  <Typography.Text>Analytics</Typography.Text>
-                  <Typography.Text>Other</Typography.Text>
-                  <Typography.Text>info</Typography.Text>
-                </Space>
-              </Card>
+              ></Card>
             </Col>
           </Row>
         </Layout.Content>
