@@ -1,9 +1,9 @@
 import React from "react";
-import { Select, Button, Tabs, Row, Col, Layout, Badge } from "antd";
+import { Select, Button, Layout, Badge } from "antd";
 import Menus from "../Components/Menus";
-import Content from "../Components/Content";
 import Header from "../Components/Header";
 
+const { Content } = Layout;
 const site = () => {
   return (
     <div style={{ minHeight: "100vh" }}>
@@ -19,6 +19,9 @@ const site = () => {
         >
           <Menus mode="horizontal" defaultSelectedKeys="general" />
         </Layout.Content>
+        <Layout style={{ padding: "16px  16px", minHeight: "90vh" }}>
+          <Content style={{ backgroundColor: "#fff" }}></Content>
+        </Layout>
       </Layout>
     </div>
   );

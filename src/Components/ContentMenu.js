@@ -35,7 +35,7 @@ const ContentMenu = ({
       style={style}
     >
       <Menu.Item key="blog">
-        <NavLink to="blog">
+        <NavLink to="/content/blog">
           <UserOutlined /> Blog
         </NavLink>
       </Menu.Item>

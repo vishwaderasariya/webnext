@@ -1,6 +1,7 @@
 import React, { Children, useState } from "react";
 import styled from "styled-components";
 import { Menu } from "antd";
+import { NavLink } from "react-router-dom";
 
 const StyledMenu = styled(Menu)`
   padding: ${(props) => props.padding || "auto"};
@@ -21,7 +22,11 @@ const AntMenu = ({ defaultSelectedKeys, defaultOpenKeys, mode, style }) => {
       <Menu.Item key="seo">SEO</Menu.Item>
       <Menu.Item key="analysis">Analysis</Menu.Item>
       <Menu.Item key="plugin">Plugin</Menu.Item>
-      <Menu.Item key="content">Content</Menu.Item>
+
+      <Menu.Item key="content">
+        <NavLink to="site/content">Content</NavLink>
+      </Menu.Item>
+
       <Menu.Item key="assets">Assets</Menu.Item>
       <Menu.Item key="access">Access</Menu.Item>
       <Menu.Item key="setting">Settings</Menu.Item>

@@ -3,7 +3,6 @@ import { Route, BrowserRouter, Switch } from "react-router-dom";
 import Sites from "./routes/Sites";
 import site from "./routes/site";
 import EditorPage from "./routes/EditorPage";
-import Content from "./Components/Content";
 import CreateSite from "./Components/CreateSite";
 import UpdateSite from "./Components/UpdateSite";
 import DeleteSite from "./Components/DeleteSite";
@@ -18,17 +17,17 @@ function App() {
     <div>
       <BrowserRouter>
         <Switch>
-          {/* <Route path="/" component={CreateSite} exact />
-          <Route path="/update" component={UpdateSite} exact />
-          <Route path="/delete" component={DeleteSite} exact />
-          <Route path="/register" component={RegisterUser} exact />
+          <Route path="/createsite" component={CreateSite} exact />
+          <Route path="/update" component={UpdateSite} />
+          <Route path="/delete" component={DeleteSite} />
+          <Route path="/register" component={RegisterUser} />
           <Route path="/login" component={Login} exact />
-          <Route path="/createpage" component={CreatePage} exact /> */}
-          <Route path="/home" component={Sites} exact />
+          <Route path="/createpage" component={CreatePage} />
+          <Route path="/" component={Sites} exact />
           <Route path="/site" component={site} exact></Route>
-          <Route path="/sitecontent" component={site_content} />
+          <Route path="/site/content" component={site_content} />
           <Switch>
-            <Route path="/blog" component={Blog}></Route>
+            <Route path="/content/blog" component={Blog} exact></Route>
           </Switch>
           <Route path="/editorpage" component={EditorPage} exact />
         </Switch>

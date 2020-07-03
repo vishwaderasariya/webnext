@@ -25,9 +25,6 @@ function CreateSite() {
           setformData({ ...formData, ...e });
         }}
       >
-        <Form.Item label="id" name="id" rules={[{ required: true }]}>
-          <Input />
-        </Form.Item>
         <Form.Item label="Site name" name="name" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
