@@ -7,7 +7,7 @@ import {
   BellOutlined,
   DownOutlined,
 } from "@ant-design/icons";
-function Header() {
+function Header({ searchBar }) {
   return (
     <Layout>
       <Layout.Header
@@ -27,14 +27,22 @@ function Header() {
                   style={{ width: 82, height: 30, marginBottom: "4px" }}
                 ></img>
               </Col>
-              <Col>
-                <Select defaultValue="Logicwind.com" style={{ width: "293px" }}>
-                  <Select.Option value="Logicwind.com">
-                    Logicwind.com
-                  </Select.Option>
-                  <Select.Option value="Webnext.com">Webnext.com</Select.Option>
-                </Select>
-              </Col>
+
+              {searchBar ? (
+                <Col>
+                  <Select
+                    defaultValue="Logicwind.com"
+                    style={{ width: "293px" }}
+                  >
+                    <Select.Option value="Logicwind.com">
+                      Logicwind.com
+                    </Select.Option>
+                    <Select.Option value="Webnext.com">
+                      Webnext.com
+                    </Select.Option>
+                  </Select>
+                </Col>
+              ) : null}
               <Col>
                 <NavLink to="/editorpage">
                   <Button>Editor</Button>

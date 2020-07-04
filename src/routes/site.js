@@ -8,7 +8,7 @@ const site = () => {
   return (
     <div style={{ minHeight: "100vh" }}>
       <Layout>
-        <Header />
+        <Header searchBar={false} sites={["Logicwind.com", "Webnext.com"]} />
         <Layout.Content
           style={{
             padding: "0 16px",

@@ -6,7 +6,7 @@ import EditorPage from "./routes/EditorPage";
 import CreateSite from "./Components/CreateSite";
 import UpdateSite from "./Components/UpdateSite";
 import DeleteSite from "./Components/DeleteSite";
-import RegisterUser from "./Components/RegisterUser";
+import RegisterUser from "./routes/RegisterUser";
 import Login from "./Components/Login";
 import CreatePage from "./Components/CreatePage";
 import site_content from "./routes/site_content";
@@ -23,7 +23,7 @@ function App() {
           <Route path="/register" component={RegisterUser} />
           <Route path="/login" component={Login} exact />
           <Route path="/createpage" component={CreatePage} />
-          <Route path="/" component={Sites} exact />
+          <Route path="/sites" component={Sites} exact />
           <Route path="/site" component={site} exact></Route>
           <Route path="/site/content" component={site_content} />
           <Switch>
