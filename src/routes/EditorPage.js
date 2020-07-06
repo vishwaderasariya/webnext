@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layout, Select, Button, Row, Col, Radio, Badge } from "antd";
+import { Layout, Select, Button, Row, Col, Card, Radio, Badge } from "antd";
 import { BrowserRouter, NavLink } from "react-router-dom";
 
 import Avatar from "../Components/Avatar";
@@ -14,7 +14,6 @@ import {
   TabletOutlined,
   LaptopOutlined,
 } from "@ant-design/icons";
-import Card from "../Components/Card";
 
 function EditorPage() {
   const [active, setactive] = useState("");

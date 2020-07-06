@@ -14,8 +14,7 @@ const StyledMenu = styled(Menu)`
   margin: ${(props) => props.margin || "auto"};
   maxwidth: ${(props) => props.maxWidth || "auto"};
 `;
-
-const ContentMenu = ({
+const GeneralMenu = ({
   defaultSelectedKeys,
   defaultOpenKeys,
   mode,
@@ -35,31 +34,30 @@ const ContentMenu = ({
       style={style}
     >
       <Menu.Item key="blog">
-        <NavLink to="/site/content/blog">
-          <UserOutlined /> Blog
+        <NavLink to="/site/gerneral/domain">
+          <UserOutlined /> Domain
         </NavLink>
       </Menu.Item>
 
       <Menu.Item key="form">
-        <NavLink to="/site/content/form">
+        <NavLink to="/site/general/status">
           <SettingOutlined />
-          Form
+          Status
         </NavLink>
       </Menu.Item>
       <Menu.Item key="survey">
-        <NavLink to="/site/content/survey">
+        <NavLink to="/site/general/security">
           <BulbOutlined />
-          Survey
+          Security
         </NavLink>
       </Menu.Item>
       <Menu.Item key="subscription">
-        <NavLink to="/site/content/subscription">
+        <NavLink to="/site/general/proxy">
           <MailOutlined />
-          Subscription
+          Proxy
         </NavLink>
       </Menu.Item>
     </StyledMenu>
   );
 };
-
-export default ContentMenu;
+export default GeneralMenu;

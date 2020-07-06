@@ -26,7 +26,6 @@ const REGISTER_USER = gql`
     register(input: $input) {
       user {
         id
-        username
         email
       }
     }
@@ -40,7 +39,13 @@ function SignUpCard() {
   return (
     <Row justify="center" align="middle" style={{ minHeight: "100vh" }}>
       <Col span={6}>
-        <Card style={{ textAlign: "center" }} title="Sign Up">
+        <Card
+          style={{
+            textAlign: "center",
+            boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+          }}
+          title="Sign Up"
+        >
           {/* <Typography.Text strong>Sign Up</Typography.Text> */}
           <Form
             onValuesChange={(e) => {
@@ -48,9 +53,9 @@ function SignUpCard() {
             }}
             style={{ margin: "1rem 0" }}
           >
-            <Form.Item name="username" rules={[{ required: true }]}>
+            {/* <Form.Item name="username" rules={[{ required: true }]}>
               <Input placeholder="Username" prefix={<UserOutlined />} />
-            </Form.Item>
+            </Form.Item> */}
             <Form.Item name="email" rules={[{ required: true }]}>
               <Input
                 type="email"
@@ -69,7 +74,7 @@ function SignUpCard() {
               mutation={REGISTER_USER}
               variables={{
                 input: {
-                  username: formData.username,
+                  username: formData.email,
                   password: formData.password,
                   email: formData.email,
                 },
@@ -95,7 +100,7 @@ function SignUpCard() {
             </Button>
           </Space>
         </Card>
-        <Typography.Text>
+        <Typography.Text style={{ marginLeft: "80px" }}>
           If you have already account,
           <NavLink to="login">
             <Button type="link">Login</Button>

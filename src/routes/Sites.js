@@ -11,6 +11,7 @@ import {
   DownOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
+import CardTile from "../Components/CardTile";
 function Sites() {
   return (
     <div>
@@ -64,25 +65,30 @@ function Sites() {
             minHeight: "100vh",
           }}
         >
-          <Row gutter={[5, 5]}>
-            <Col xs={24} sm={12} md={8} lg={6} xl={5}>
+          {/*<Row gutter={[5, 5]}>
+             <Col xs={24} sm={12} md={8} lg={6} xl={5}>
               <NavLink to="createsite">
                 <Button
                   icon={<PlusOutlined />}
                   style={{ width: "100%", height: "100%" }}
                 ></Button>
               </NavLink>
-            </Col>
-            <Col xs={24} sm={12} md={8} lg={6} xl={5}>
-              <Card
+            </Col> 
+             <Col xs={24} sm={12} md={8} lg={6} xl={5}> 
+             <Card
                 title="WebNext.com"
                 headStyle={{ fontWeight: "bold" }}
-                extra={<Button type="link">Settings</Button>}
+                extra={
+                  <NavLink to="/site">
+                    <Button type="link">Settings</Button>
+                  </NavLink>
+                }
                 style={{
                   border: "1px solid #DCDCDC",
                 }}
-              ></Card>
-            </Col>
+              ></Card> 
+            
+             </Col>
             <Col xs={24} sm={12} md={8} lg={6} xl={5}>
               <Card
                 title="Logicwind.com"
@@ -96,8 +102,9 @@ function Sites() {
                   border: "1px solid #DCDCDC",
                 }}
               ></Card>
-            </Col>
-          </Row>
+            </Col>  
+          </Row>*/}
+          <CardTile />
         </Layout.Content>
       </Layout>
     </div>

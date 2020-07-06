@@ -9,7 +9,7 @@ const { Sider, Content } = Layout;
 function site_content() {
   return (
     <div style={{ minHeight: 100 }}>
-      <Header />
+      <Header searchBar={true} />
       <Layout.Content
         style={{
           padding: "0 16px",
@@ -35,3 +35,5 @@ function site_content() {
 }
 
 export default site_content;
+
+// /site/{ sitename } /content/blogs(e.g. / site / logicwind / content / blogs)

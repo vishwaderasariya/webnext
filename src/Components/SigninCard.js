@@ -1,8 +1,22 @@
 import React, { useState } from "react";
-import { Form, Input, Button, Card, Space, Typography, Row, Col } from "antd";
+import {
+  Form,
+  Input,
+  Button,
+  Card,
+  Space,
+  Typography,
+  Row,
+  Col,
+  Divider,
+} from "antd";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
-import { UserOutlined, UnlockOutlined } from "@ant-design/icons";
+import {
+  UserOutlined,
+  UnlockOutlined,
+  GoogleOutlined,
+} from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
 
 const LOGIN_USER = gql`
@@ -22,7 +36,13 @@ function SigninCard() {
   return (
     <Row justify="center" align="middle" style={{ minHeight: "100vh" }}>
       <Col span={6}>
-        <Card style={{ textAlign: "center" }} title="Login to your Account">
+        <Card
+          style={{
+            textAlign: "center",
+            boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+          }}
+          title="Login to your Account"
+        >
           <Form
             onValuesChange={(e) => {
               setformData({ ...formData, ...e });
@@ -41,6 +61,7 @@ function SigninCard() {
             </Form.Item>
             <Space direction="vertical">
               <Typography.Text>Forgot Password?</Typography.Text>
+
               <Mutation
                 mutation={LOGIN_USER}
                 variables={{
@@ -64,10 +85,17 @@ function SigninCard() {
                   </Form.Item>
                 )}
               </Mutation>
+              <Divider />
+              <Typography.Text>
+                Or log in with one o the following platform
+              </Typography.Text>
+              <Button>
+                <GoogleOutlined />
+              </Button>
             </Space>
           </Form>
         </Card>
-        <Typography.Text>
+        <Typography.Text style={{ marginLeft: "80px" }}>
           If you don't have an account,
           <NavLink to="register">
             <Button type="link">Sign up</Button>

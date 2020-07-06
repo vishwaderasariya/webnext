@@ -8,10 +8,10 @@ import Header from "../Components/Header";
 import site_content from "./site_content";
 
 const { Sider } = Layout;
-function Blog() {
+function site_content_blog() {
   return (
     <div style={{ minHeight: 100 }}>
-      <Header />
+      <Header searchBar={true} />
       <Layout.Content
         style={{
           padding: "0 16px",
@@ -131,4 +131,4 @@ function Blog() {
   );
 }
 
-export default Blog;
+export default site_content_blog;

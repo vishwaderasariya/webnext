@@ -1,14 +1,15 @@
 import React from "react";
-import { Select, Button, Layout, Badge } from "antd";
+import { Select, Button, Layout, Badge, Card } from "antd";
 import Menus from "../Components/Menus";
 import Header from "../Components/Header";
+import GeneralMenu from "../Components/GeneralMenu";
 
-const { Content } = Layout;
+const { Content, Sider } = Layout;
 const site = () => {
   return (
     <div style={{ minHeight: "100vh" }}>
       <Layout>
-        <Header searchBar={false} sites={["Logicwind.com", "Webnext.com"]} />
+        <Header searchBar={true} sites={["Logicwind.com", "Webnext.com"]} />
         <Layout.Content
           style={{
             padding: "0 16px",
@@ -19,9 +20,19 @@ const site = () => {
         >
           <Menus mode="horizontal" defaultSelectedKeys="general" />
         </Layout.Content>
-        <Layout style={{ padding: "16px  16px", minHeight: "90vh" }}>
-          <Content style={{ backgroundColor: "#fff" }}></Content>
+        <Layout style={{ minHeight: "80vh", padding: "16px 16px" }}>
+          <Sider style={{ backgroundColor: "#fff" }}>
+            <GeneralMenu mode="vertical" defaultOpenKeys="blog"></GeneralMenu>
+          </Sider>
+          <Layout>
+            <Content>
+              <Card style={{ minHeight: "80vh" }}></Card>
+            </Content>
+          </Layout>
         </Layout>
+        {/* <Layout style={{ padding: "16px  16px", minHeight: "90vh" }}>
+          <Content style={{ backgroundColor: "#fff" }}></Content>
+        </Layout> */}
       </Layout>
     </div>
   );
