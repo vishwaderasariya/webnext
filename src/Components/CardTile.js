@@ -15,13 +15,14 @@ const GET_SITES = gql`
     sites {
       name
       domain
+      id
     }
   }
 `;
 
 function CardTile() {
   const { data, loading, error } = useQuery(GET_SITES);
-
+  console.log(data);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
   return (
@@ -43,7 +44,7 @@ function CardTile() {
                 title={site.domain}
                 headStyle={{ fontWeight: "bold" }}
                 extra={
-                  <NavLink to="/site">
+                  <NavLink to={`/site/${site.name}`}>
                     <Button type="link">Settings</Button>
                   </NavLink>
                 }

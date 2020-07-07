@@ -7,6 +7,7 @@ import {
   BellOutlined,
   DownOutlined,
 } from "@ant-design/icons";
+import Notification from "./Notification";
 function Header({ searchBar }) {
   return (
     <Layout>
@@ -44,7 +45,7 @@ function Header({ searchBar }) {
                 </Col>
               ) : null}
               <Col>
-                <NavLink to="/editorpage">
+                <NavLink to="/editor">
                   <Button>Editor</Button>
                 </NavLink>
               </Col>
@@ -59,14 +60,7 @@ function Header({ searchBar }) {
                 ></Button>
               </Col>
               <Col>
-                <Button
-                  icon={
-                    <Badge count={22}>
-                      <BellOutlined style={{ fontSize: 20 }} />
-                    </Badge>
-                  }
-                  type="text"
-                ></Button>
+                <Notification />
               </Col>
               <Col>
                 <Button type="text">
