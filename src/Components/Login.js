@@ -1,6 +1,5 @@
 import React from "react";
-import { Layout, Typography, Button } from "antd";
-import { NavLink } from "react-router-dom";
+import { Layout } from "antd";
 import SigninCard from "./SigninCard";
 
 function Login() {

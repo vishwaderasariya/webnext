@@ -16,7 +16,6 @@ import { NavLink } from "react-router-dom";
 
 import {
   GoogleOutlined,
-  UserOutlined,
   UnlockOutlined,
   MailOutlined,
 } from "@ant-design/icons";

@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Layout, Select, Button, Row, Col, Card, Radio, Badge } from "antd";
 import { BrowserRouter, NavLink } from "react-router-dom";
-
 import Avatar from "../Components/Avatar";
 import {
   QuestionCircleOutlined,
@@ -14,11 +13,10 @@ import {
   TabletOutlined,
   LaptopOutlined,
 } from "@ant-design/icons";
-
-function EditorPage() {
-  const [active, setactive] = useState("");
-  console.log(active);
-
+import history from "../History";
+console.log(history);
+function editorPage(props) {
+  console.log(props.match.params.siteName);
   return (
     <div style={{ minHeight: "100vh" }}>
       <Layout>
@@ -56,7 +54,9 @@ function EditorPage() {
                 <Col>
                   <Radio.Group buttonStyle="solid" defaultValue="pages">
                     <BrowserRouter>
-                      <NavLink to="/editor/pages">
+                      <NavLink
+                        to={`/${props.match.params.siteName}/editor/pages`}
+                      >
                         <Radio.Button value="pages">Pages</Radio.Button>
                       </NavLink>
                     </BrowserRouter>
@@ -80,24 +80,6 @@ function EditorPage() {
                       </NavLink>
                     </BrowserRouter>
                   </Radio.Group>
-                  {/* <BrowserRouter>
-                    <NavLink to="/editor/{active}">
-                      <Radio.Group
-                        buttonStyle="solid"
-                        defaultValue="pages"
-                        onChange={(event) => setactive(event.target.value)}
-                      >
-                        <Radio.Button value="pages">Pages</Radio.Button>
-                        <Radio.Button value="components">
-                          Components
-                        </Radio.Button>
-                        <Radio.Button value="theme">Theme</Radio.Button>
-                        <Radio.Button value="integration">
-                          Integration
-                        </Radio.Button>
-                      </Radio.Group>
-                    </NavLink>
-                  </BrowserRouter> */}
                 </Col>
               </Row>
             </Col>
@@ -196,4 +178,4 @@ function EditorPage() {
   );
 }
 
-export default EditorPage;
+export default editorPage;

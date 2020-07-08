@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import SignUpCard from "../Components/SignUpCard";
-import { Layout, Typography, Button } from "antd";
+import { Layout } from "antd";
 
 function RegisterUser() {
   return (

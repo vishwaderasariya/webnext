@@ -5,10 +5,9 @@ import BlogDetails from "../Components/BlogDetails";
 import ContentMenu from "../Components/ContentMenu";
 
 import Header from "../Components/Header";
-import site_content from "./site_content";
 
 const { Sider } = Layout;
-function site_content_blog() {
+function siteContentBlog() {
   return (
     <div style={{ minHeight: 100 }}>
       <Header searchBar={true} />
@@ -131,4 +130,4 @@ function site_content_blog() {
   );
 }
 
-export default site_content_blog;
+export default siteContentBlog;

@@ -1,18 +1,31 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Space, Button, Layout, Row, Col, Badge } from "antd";
+import React from "react";
+import { Button, Layout, Row, Col, Badge } from "antd";
 import Avatar from "../Components/Avatar";
-import Card from "../Components/Card";
-import Header from "../Components/Header";
+
+import gql from "graphql-tag";
+import { useQuery } from "@apollo/react-hooks";
 import {
   QuestionCircleOutlined,
-  PlusOutlined,
   BellOutlined,
   DownOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
 import CardTile from "../Components/CardTile";
+const GET_SITES = gql`
+  {
+    sites {
+      name
+      domain
+      id
+    }
+  }
+`;
+
 function Sites() {
+  const { data, loading, error } = useQuery(GET_SITES);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error</p>;
+
   return (
     <div>
       <Layout>
@@ -58,53 +71,13 @@ function Sites() {
             </Col>
           </Row>
         </Layout.Header>
-
         <Layout.Content
           style={{
             padding: 16,
             minHeight: "100vh",
           }}
         >
-          {/*<Row gutter={[5, 5]}>
-             <Col xs={24} sm={12} md={8} lg={6} xl={5}>
-              <NavLink to="createsite">
-                <Button
-                  icon={<PlusOutlined />}
-                  style={{ width: "100%", height: "100%" }}
-                ></Button>
-              </NavLink>
-            </Col> 
-             <Col xs={24} sm={12} md={8} lg={6} xl={5}> 
-             <Card
-                title="WebNext.com"
-                headStyle={{ fontWeight: "bold" }}
-                extra={
-                  <NavLink to="/site">
-                    <Button type="link">Settings</Button>
-                  </NavLink>
-                }
-                style={{
-                  border: "1px solid #DCDCDC",
-                }}
-              ></Card> 
-            
-             </Col>
-            <Col xs={24} sm={12} md={8} lg={6} xl={5}>
-              <Card
-                title="Logicwind.com"
-                headStyle={{ fontWeight: "bold" }}
-                extra={
-                  <NavLink to="/site">
-                    <Button type="link">Settings</Button>
-                  </NavLink>
-                }
-                style={{
-                  border: "1px solid #DCDCDC",
-                }}
-              ></Card>
-            </Col>  
-          </Row>*/}
-          <CardTile />
+          <CardTile sites={data.sites} />
         </Layout.Content>
       </Layout>
     </div>

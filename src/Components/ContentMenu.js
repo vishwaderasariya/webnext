@@ -23,7 +23,9 @@ const ContentMenu = ({
   padding,
   margin,
   maxWidth,
+  siteName,
 }) => {
+  console.log(siteName);
   return (
     <StyledMenu
       padding={padding}
@@ -35,25 +37,25 @@ const ContentMenu = ({
       style={style}
     >
       <Menu.Item key="blog">
-        <NavLink to="/site/content/blog">
+        <NavLink to={`/site/${siteName}/content/blog`}>
           <UserOutlined /> Blog
         </NavLink>
       </Menu.Item>
 
       <Menu.Item key="form">
-        <NavLink to="/site/content/form">
+        <NavLink to={`/site/${siteName}/content/form`}>
           <SettingOutlined />
           Form
         </NavLink>
       </Menu.Item>
       <Menu.Item key="survey">
-        <NavLink to="/site/content/survey">
+        <NavLink to={`/site/${siteName}/content/survey`}>
           <BulbOutlined />
           Survey
         </NavLink>
       </Menu.Item>
       <Menu.Item key="subscription">
-        <NavLink to="/site/content/subscription">
+        <NavLink to={`/site/${siteName}/content/subscription`}>
           <MailOutlined />
           Subscription
         </NavLink>

@@ -1,14 +1,10 @@
 import React from "react";
-import { Select, Button, Tabs, Row, Col, Layout, Badge } from "antd";
+import { Select, Button, Row, Col, Layout } from "antd";
 import Avatar from "../Components/Avatar";
-import { NavLink, BrowserRouter } from "react-router-dom";
-import {
-  QuestionCircleOutlined,
-  BellOutlined,
-  DownOutlined,
-} from "@ant-design/icons";
+import { NavLink } from "react-router-dom";
+import { QuestionCircleOutlined, DownOutlined } from "@ant-design/icons";
 import Notification from "./Notification";
-function Header({ searchBar }) {
+function Header({ searchBar, siteName }) {
   return (
     <Layout>
       <Layout.Header
@@ -45,7 +41,7 @@ function Header({ searchBar }) {
                 </Col>
               ) : null}
               <Col>
-                <NavLink to="/editor">
+                <NavLink to={`/${siteName}/editor`}>
                   <Button>Editor</Button>
                 </NavLink>
               </Col>
