@@ -3,19 +3,24 @@ import { Typography, Row, Col, Layout, Card } from "antd";
 import Menus from "../Components/Menus";
 import BlogDetails from "../Components/BlogDetails";
 import ContentMenu from "../Components/ContentMenu";
-
 import Header from "../Components/Header";
-
+import history from "../History";
+console.log(history);
 const { Sider } = Layout;
-function siteContentBlog() {
+function siteContentBlog(props) {
+  console.log(props.match.params.siteName);
   return (
     <div style={{ minHeight: 100 }}>
       <Layout>
         <Header searchBar={true} />
-        <Menus mode="horizontal" defaultSelectedKeys="content"></Menus>
+        <Menus siteName={props.match.params.siteName}></Menus>
         <Layout style={{ minHeight: "80vh", padding: 16 }}>
           <Sider style={{ backgroundColor: "#fff" }}>
-            <ContentMenu mode="vertical" defaultOpenKeys="blog"></ContentMenu>
+            <ContentMenu
+              mode="vertical"
+              defaultOpenKeys="blog"
+              siteName={props.match.params.siteName}
+            ></ContentMenu>
           </Sider>
           <Layout.Content>
             <Card

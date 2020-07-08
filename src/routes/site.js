@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Card, Switch } from "antd";
+import { Layout, Card } from "antd";
 import { Route } from "react-router-dom";
 
 import Menus from "../Components/Menus";
@@ -15,11 +15,12 @@ const site = (props) => {
     <div style={{ minHeight: "100vh" }}>
       <Layout>
         <Header searchBar={true} siteName={props.match.params.siteName} />
-        <Menus
+        {/* <Menus
           siteName={props.match.params.siteName}
           mode="horizontal"
           defaultSelectedKeys="general"
-        />
+        /> */}
+        <Menus siteName={props.match.params.siteName} />
         <Layout.Content style={{ padding: 16 }}>
           <Card style={{ minHeight: "80vh" }}>
             <Route
