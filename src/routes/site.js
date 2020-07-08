@@ -1,7 +1,11 @@
 import React from "react";
-import { Layout, Badge, Card } from "antd";
+import { Layout, Card, Switch } from "antd";
+import { Route } from "react-router-dom";
+
 import Menus from "../Components/Menus";
 import Header from "../Components/Header";
+import siteContentBlog from "./siteContentBlog";
+import siteContent from "./siteContent";
 import history from "../History";
 console.log(history);
 
@@ -17,7 +21,18 @@ const site = (props) => {
           defaultSelectedKeys="general"
         />
         <Layout.Content style={{ padding: 16 }}>
-          <Card style={{ minHeight: "80vh" }}></Card>
+          <Card style={{ minHeight: "80vh" }}>
+            <Route
+              path="/site/:siteName/content"
+              component={siteContent}
+              exact
+            />
+            <Route
+              path="/site/:siteName/content/blog"
+              component={siteContentBlog}
+              exact
+            />
+          </Card>
         </Layout.Content>
       </Layout>
     </div>

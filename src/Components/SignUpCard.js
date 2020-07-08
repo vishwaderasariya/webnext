@@ -1,16 +1,6 @@
 import React, { useState } from "react";
 import { Mutation } from "react-apollo";
-import {
-  Form,
-  Input,
-  Button,
-  Card,
-  Layout,
-  Row,
-  Col,
-  Typography,
-  Space,
-} from "antd";
+import { Form, Input, Button, Card, Row, Col, Typography, Space } from "antd";
 import gql from "graphql-tag";
 import { NavLink } from "react-router-dom";
 
@@ -30,7 +20,6 @@ const REGISTER_USER = gql`
     }
   }
 `;
-const { Content } = Layout;
 
 function SignUpCard() {
   const [formData, setformData] = useState({});

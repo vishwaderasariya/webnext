@@ -16,7 +16,6 @@ const AntMenu = ({
   style,
   siteName,
 }) => {
-  // console.log(history);
   console.log(siteName);
   return (
     <StyledMenu

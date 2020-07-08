@@ -6,7 +6,7 @@ import editorPage from "./routes/editorPage";
 import CreateSite from "./Components/CreateSite";
 import UpdateSite from "./Components/UpdateSite";
 import DeleteSite from "./Components/DeleteSite";
-import RegisterUser from "./routes/RegisterUser";
+import registerUser from "./routes/registerUser";
 import Login from "./Components/Login";
 import CreatePage from "./Components/CreatePage";
 import siteContentBlog from "./routes/siteContentBlog";
@@ -20,7 +20,7 @@ function App() {
           <Route path="/createSite" component={CreateSite} exact />
           <Route path="/update" component={UpdateSite} />
           <Route path="/delete" component={DeleteSite} />
-          <Route path="/register" component={RegisterUser} />
+          <Route path="/register" component={registerUser} />
           <Route path="/login" component={Login} exact />
           <Route path="/createPage" component={CreatePage} />
           <Route path="/sites" component={Sites} exact />

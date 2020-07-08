@@ -2,7 +2,7 @@ import React from "react";
 import SignUpCard from "../Components/SignUpCard";
 import { Layout } from "antd";
 
-function RegisterUser() {
+function registerUser() {
   return (
     <Layout>
       <Layout.Content>
@@ -12,4 +12,4 @@ function RegisterUser() {
   );
 }
 
-export default RegisterUser;
+export default registerUser;
