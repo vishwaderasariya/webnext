@@ -11,6 +11,8 @@ import Login from "./Components/Login";
 import CreatePage from "./Components/CreatePage";
 import siteContentBlog from "./routes/siteContentBlog";
 import siteContent from "./routes/siteContent";
+import siteGeneral from "./routes/siteGeneral";
+import siteAssets from "./routes/siteAssets";
 
 function App() {
   return (
@@ -25,7 +27,9 @@ function App() {
           <Route path="/createPage" component={CreatePage} />
           <Route path="/sites" component={Sites} exact />
           <Route path="/site/:siteName" component={site} exact />
+          <Route path="/site/:siteName/general" component={siteGeneral} exact />
           <Route path="/site/:siteName/content" component={siteContent} exact />
+          <Route path="/site/:siteName/assets" component={siteAssets} exact />
           <Route
             path="/site/:siteName/content/blog"
             component={siteContentBlog}

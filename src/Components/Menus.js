@@ -28,7 +28,7 @@ function Menus({ siteName }) {
             <NavLink to={`/site/${siteName}/content`}>Content</NavLink>
           </Menu.Item>
           <Menu.Item key="assets">
-            <NavLink to={`/site/${siteName}/assests`}>Assets</NavLink>
+            <NavLink to={`/site/${siteName}/assets`}>Assets</NavLink>
           </Menu.Item>
           <Menu.Item key="access">
             <NavLink to={`/site/${siteName}/access`}>Access</NavLink>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Mutation } from "react-apollo";
-import { Form, Input, Button, Card, Row, Col, Typography, Space } from "antd";
+import { Form, Input, Button, Card, Row, Col, Typography } from "antd";
 import gql from "graphql-tag";
 import { NavLink } from "react-router-dom";
 
@@ -8,6 +8,7 @@ import {
   GoogleOutlined,
   UnlockOutlined,
   MailOutlined,
+  FacebookOutlined,
 } from "@ant-design/icons";
 
 const REGISTER_USER = gql`
@@ -74,19 +75,28 @@ function SignUpCard() {
                     type="primary"
                     onClick={registeruser}
                     htmlType="submit"
+                    style={{ width: "100%" }}
                   >
-                    Confirm{" "}
+                    Confirm
                   </Button>
                 </Form.Item>
               )}
             </Mutation>
           </Form>
-          <Space direction="vertical">
-            <Typography.Text>Or Start With</Typography.Text>
-            <Button>
-              <GoogleOutlined />
-            </Button>
-          </Space>
+
+          <p>Or Start With</p>
+          <Row gutter={10} justify="center">
+            <Col>
+              <Button style={{ padding: "4px 40px" }}>
+                <GoogleOutlined />
+              </Button>
+            </Col>
+            <Col>
+              <Button style={{ padding: "4px 40px" }}>
+                <FacebookOutlined />
+              </Button>
+            </Col>
+          </Row>
         </Card>
         <Typography.Text style={{ marginLeft: "80px" }}>
           If you have already account,
